@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/timetable-generator.css">
+    <title>Course Timetable Generator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Study Timetable Generator</h2>
+            </div>
+            
+            <div class="settings-form">
+                <div>
+                    <label for="weeklyHours">Weekly Study Hours</label>
+                    <input type="number" id="weeklyHours" value="20" min="1" max="168">
+                </div>
+                <div>
+                    <label for="dailyLimit">Daily Hour Limit</label>
+                    <input type="number" id="dailyLimit" value="4" min="1" max="24">
+                </div>
+            </div>
+
+            <div class="course-form">
+                <input type="text" id="courseName" placeholder="Course Name">
+                <input type="number" id="units" placeholder="Units">
+                <button class="btn btn-add" onclick="addCourse()">
+                    <span class="plus-icon"></span>
+                    Add Course
+                </button>
+            </div>
+            <div id="courseList" class="course-list"></div>
+            <button class="btn generate-btn" onclick="generateTimetable()" id="generateBtn" style="display: none;">
+                Generate Timetable
+            </button>
+        </div>
+
+        <div class="card" id="timetableCard" style="display: none;">
+            <div class="card-header">
+                <h2 class="card-title">Weekly Study Timetable</h2>
+            </div>
+            <table class="timetable">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Study Plan</th>
+                    </tr>
+                </thead>
+                <tbody id="timetableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="cta">
+        <a href="index.html" class="btn">Back</a>
+    </div>
+
+
+    <scripts defer src=/app.js></scripts>
+</body>
+</html>

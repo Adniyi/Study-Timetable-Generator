@@ -64,7 +64,7 @@ function formatStudyTime(hours) {
     }
 }
 
-function addCourse() {
+function addCourse(){
     const name = document.getElementById('courseName').value;
     const units = document.getElementById('units').value;
 
